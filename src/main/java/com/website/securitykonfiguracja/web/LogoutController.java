@@ -8,6 +8,6 @@ public class LogoutController {
 
     @GetMapping("/loggedOut")
     public String loggedOut() {
-        return "index";
+        return "secured";
     }
 }

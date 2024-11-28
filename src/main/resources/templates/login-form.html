@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Log in</title>
-    <link rel="stylesheet" th:href="@{/styles/styles.css}" href="/styles/styles.css">
+    <link rel="stylesheet" th:href="@{/styles/styles.css}" href="../styles/styles.css">
 
 </head>
 <body>
@@ -14,6 +14,9 @@
         <input type="password" name="password" placeholder="Password" class="form-item">
         <button type="submit" class="form-item">Log in</button>
     </form>
+    <p>
+        Nie masz jeszcze konta? <a href="#" th:href="@{/register}">Zarejestruj się.</a>
+    </p>
 </div>
 </body>
 </html>

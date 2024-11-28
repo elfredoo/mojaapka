@@ -1,105 +1,148 @@
 body {
     margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #1f1f1f, #2e2e2e);
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Głębokie czarne tło */
+    color: #f1f1f1; /* Jasny tekst dla kontrastu */
 }
 
-/* Kontener */
 .container {
     text-align: center;
     padding: 20px;
-    max-width: 400px;
-    background: linear-gradient(145deg, #2c2c2c, #3c3c3c);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7), inset 0 -2px 15px rgba(255, 255, 255, 0.1);
+    margin: auto;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #d4af37;
     border-radius: 15px;
-    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Nagłówek */
-.login-header {
+h1 {
+    font-size: 3rem;
+    color: #d4af37; /* Złoty kolor */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: 0 5px 10px rgba(212, 175, 55, 0.5);
+}
+
+h1.login-header {
     font-size: 2.5rem;
-    font-weight: bold;
-    color: #ffb703;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 10px rgba(255, 183, 3, 0.8);
-    animation: glow 2s infinite;
+    margin-bottom: 30px;
 }
 
-/* Ikona kłódki */
+/* Styl dla ikony kłódki */
 .lock-icon {
+    color: #d4af37;
     margin-bottom: 20px;
-    color: #ff5400;
-    animation: scale-bounce 1.5s infinite ease-in-out;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Formularz */
+.lock-icon:hover {
+    transform: rotate(10deg) scale(1.1);
+    color: #8c6239;
+}
+
+.topg {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.topg:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.7);
+}
+
+a {
+    display: inline-block;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #f1f1f1;
+    background: linear-gradient(90deg, #d4af37, #8c6239);
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+    background: linear-gradient(90deg, #8c6239, #d4af37);
+    transform: translateY(-5px);
+}
+
+a:active {
+    transform: translateY(0);
+}
+
+/* Formularz logowania/rejestracji */
 .login-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    max-width: 400px;
+    margin: auto;
 }
 
 .form-item {
-    padding: 15px;
-    border: none;
-    border-radius: 25px;
+    padding: 10px 15px;
     font-size: 1rem;
-    background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
-    color: #ffffff;
-    text-align: center;
-    transition: all 0.3s ease;
+    border-radius: 5px;
+    border: 1px solid #d4af37;
+    background-color: #1c1c1c;
+    color: #f1f1f1;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-item::placeholder {
-    color: #bbbbbb;
+    color: #aaaaaa;
 }
 
-/* Efekt hover dla pól formularza */
-.form-item:hover,
 .form-item:focus {
-    outline: none;
-    background: linear-gradient(145deg, #4c4c4c, #3c3c3c);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    border-color: #d4af37;
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
 }
 
-/* Przyciski */
-button {
+button.form-item {
     cursor: pointer;
+    background: linear-gradient(90deg, #d4af37, #8c6239);
+    border: none;
     font-weight: bold;
-    color: #ffffff;
-    background: linear-gradient(145deg, #ff7b00, #ff3d00);
-    box-shadow: 0 5px 15px rgba(255, 125, 0, 0.5);
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button.form-item:hover {
+    background: linear-gradient(90deg, #8c6239, #d4af37);
+    transform: translateY(-2px);
+}
+
+button.form-item:active {
+    transform: translateY(0);
+}
+
+/* Styl dla całego formularza rejestracji */
+form.login-form {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #d4af37;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+}
+
+/* Przyciski w formularzu */
+button {
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    color: #f1f1f1;
+    text-transform: uppercase;
+    border-radius: 5px;
 }
 
 button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(255, 125, 0, 0.8);
-    background: linear-gradient(145deg, #ff9c33, #ff6a00);
-}
-
-/* Animacje */
-@keyframes glow {
-    0%, 100% {
-        text-shadow: 2px 2px 10px rgba(255, 183, 3, 0.8), 0 0 20px rgba(255, 183, 3, 0.5);
-    }
-    50% {
-        text-shadow: 2px 2px 10px rgba(255, 183, 3, 1), 0 0 30px rgba(255, 183, 3, 1);
-    }
-}
-
-@keyframes scale-bounce {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
+    background-color: #d4af37;
+    color: #000;
+    box-shadow: 0 5px 10px rgba(212, 175, 55, 0.7);
 }

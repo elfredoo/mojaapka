@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      th:lang="${lang}"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Panel</title>
+</head>
+<body>
+    <h1 th:text="${welcomeMessage}"></h1>
+    <a sec:authorize="isAuthenticated()"
+        th:text="|Wyloguj się ${#authentication.name}|"
+       th:href="@{/logout}"
+    >
+    </a>
+</body>
+</html>

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en"
-      th:lang="${lang}"
-      xmlns:th="http://www.thymeleaf.org">
+  xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Home Page</title>
+  <meta charset="UTF-8">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="../static/styles/styles.css" th:href="@{/styles/styles.css}">
 </head>
 <body>
-    <h1 th:text="${welcomeMessage}"></h1>
-    <a th:if="${#authentication.isAuthenticated()}"
-        th:text="|Wyloguj się ${#authentication.name}|"
-       th:href="@{/logout}"
-    >
-    </a>
+<div class="container">
+    <h1>Secured Website for G`s</h1>
+  <img src="../static/img/andrew-tate.jpg" th:src="@{/img/andrew-tate.jpg}" alt="TopG TopG" class="topg">
+  <a href="#" th:href="@{/secured}">Safe website</a>
+  <a href="#" th:href="@{/admin}">Admin panel</a>
+</div>
 </body>
 </html>
