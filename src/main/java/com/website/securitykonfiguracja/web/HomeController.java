@@ -1,12 +1,27 @@
 package com.website.securitykonfiguracja.web;
 
+import com.website.securitykonfiguracja.message.WelcomeMessageService;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.CurrentSecurityContext;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
+    private final WelcomeMessageService welcomeMessageService;
+
+    public HomeController(WelcomeMessageService welcomeMessageService) {
+        this.welcomeMessageService = welcomeMessageService;
+    }
+
     @GetMapping("/")
-    String home() {
+    String home(@RequestParam(defaultValue = "en") String lang, Model model) {
+        String welcomeMessage = welcomeMessageService.getWelcomeMessage(lang);
+        model.addAttribute("lang",lang);
+        model.addAttribute("welcomeMessage", welcomeMessage);
         return "index";
     }
 }

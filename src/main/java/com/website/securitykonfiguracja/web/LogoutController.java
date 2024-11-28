@@ -4,10 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class LoginController {
+public class LogoutController {
 
-    @GetMapping("/login")
-    String login() {
-        return "login-form";
+    @GetMapping("/loggedOut")
+    public String loggedOut() {
+        return "index";
     }
 }
