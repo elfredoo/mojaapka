@@ -68,4 +68,12 @@ public class UserService {
                 .getAuthorities()
                 .stream().anyMatch(authority -> authority.getAuthority().equals(ADMIN_AUTHORITY));
     }
+
+    @Transactional
+    public void changeCurrentUserPassword(String password) {
+        String currentUsername = SecurityContextHolder.getContext().getAuthentication().getName();
+        User currentUser = userRepository.findByEmail(currentUsername).orElseThrow();
+        String encodedPassword = passwordEncoder.encode(password);
+        currentUser.setPassword(encodedPassword);
+    }
 }

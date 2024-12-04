@@ -12,8 +12,12 @@
     <h1 th:text="${welcomeMessage}"></h1>
     <a sec:authorize="isAuthenticated()"
         th:text="|Wyloguj się ${#authentication.name}|"
-       th:href="@{/logout}"
-    >
+       th:href="@{/logout}">
     </a>
+    <h2>Change password</h2>
+    <form th:action="@{/change-password}" method="post">
+        <input type="password" name="newPassword" placeholder="New password">
+        <button type="submit">Change</button>
+    </form>
 </body>
 </html>

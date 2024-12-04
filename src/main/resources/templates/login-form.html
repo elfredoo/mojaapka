@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <h1 class="login-header">Zaloguj się</h1>
-    <form action="/login" method="post" class="login-form">
+    <form th:action="@{/login}" method="post" class="login-form">
         <input type="text" name="username" placeholder="Username" class="form-item">
         <input type="password" name="password" placeholder="Password" class="form-item">
         <button type="submit" class="form-item">Log in</button>
