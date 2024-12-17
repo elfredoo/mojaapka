@@ -1,4 +1,4 @@
-FROM maven:3.9.4-amazoncorretto-21-debian-bookworm AS MAVEN_BUILD
+FROM maven:3.9.9-amazoncorretto-23-al2023 AS MAVEN_BUILD
 COPY ./pom.xml ./pom.xml
 RUN mvn dependency:go-offline -B
 COPY ./src ./src
