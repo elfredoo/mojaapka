@@ -6,6 +6,6 @@ RUN mvn clean package
 
 FROM openjdk:23
 EXPOSE 8080
-COPY --from=MAVEN_BUILD target/security-*.jar /app.jar
+COPY --from=MAVEN_BUILD /target/security-*.jar /app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
 
