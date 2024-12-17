@@ -19,6 +19,7 @@ public class SecurityConfig {
             requests
                     .requestMatchers("/").permitAll()
                     .requestMatchers("/styles/**", "/img/**").permitAll()
+                    .requestMatchers("/h2-console/**").permitAll()
                     .requestMatchers("/register","/confirmation").permitAll()
                     .requestMatchers("/secured","/change-password").hasAnyRole("USER","ADMIN")
                     .requestMatchers("/admin/**").hasRole("ADMIN")
