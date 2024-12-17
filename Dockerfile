@@ -1,8 +1,8 @@
-FROM maven:3.9.9-eclipse-temurin-23 AS MAVEN_BUILD
+FROM maven:3.9.4-amazoncorretto-21-debian-bookworm AS MAVEN_BUIL
 COPY ./pom.xml ./pom.xml
 RUN mvn dependency:go-offline -B
 COPY ./src ./src
-RUN mvn clean package
+RUN mvn package
 
 FROM openjdk:23
 EXPOSE 8080
